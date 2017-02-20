@@ -1,5 +1,5 @@
 {
-  "name": "rapid-login",
+  "name": "react-redux-login-draggable",
   "version": "1.0.0",
   "description": "React redux login application with draggable components",
   "main": "index.js",
@@ -8,6 +8,10 @@
     "open:src": "babel-node buildScripts/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src buildScripts",
     "lint:watch": "npm run lint -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GuyLivni/react-redux-login-draggable.git"
   },
   "keywords": [],
   "author": "Guy Livni",
