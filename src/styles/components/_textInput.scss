@@ -1,0 +1,13 @@
+.form-group {
+  padding-bottom: 0.8em;
+
+  .form-control {
+    width: 100%;
+    padding: 0.4em;
+    background-color: #282a3f;
+    border-radius: 0.2em;
+    border: thin inset rgba(20, 22, 35, 0.25);
+    color: #ffffff;
+    outline: none;
+  }
+}

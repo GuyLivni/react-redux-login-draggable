@@ -1,0 +1,37 @@
+$logoColor: #000000;
+$navColor: #ffffff;
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $navHeight;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  background: $navColor;
+  z-index: 1;
+
+  .nav {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    .logo-container {
+      text-decoration: none;
+
+      .logo {
+        font-size: 1.2em;
+        margin: 0;
+        user-select: none;
+        color: $logoColor;
+        text-decoration: none;
+      }
+    }
+  }
+}

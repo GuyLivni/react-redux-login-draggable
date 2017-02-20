@@ -1,0 +1,19 @@
+$logoutBtnColor: #51a9dc;
+$logoutBtnHover: #0c405f;
+
+.btn {
+  padding: 0.5em 1.5em;
+  color: $logoutBtnColor;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+  font-size: 1em;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $logoutBtnHover;
+  }
+}

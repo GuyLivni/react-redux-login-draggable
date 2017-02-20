@@ -1,0 +1,43 @@
+$formBtnColor: #fff;
+$formErrorBackgroundColor: #f2dede;
+$formErrorTextColor: #a94442;
+
+.form-container {
+  width: 300px;
+  padding: 0 3em 1em;
+  text-align: center;
+  background: $themeBackgroundColor;
+  border: thin solid #EDEDED;
+  border-radius: 0.3em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+
+  .form-header{
+    color: #ffffff;
+    font-weight: 400;
+  }
+
+  .form-btn {
+    width: 100%;
+    height: 33px;
+    color: $formBtnColor;
+    background: $btnBackgroundColor;
+    border-radius: 0.2em;
+    border: thin solid #0c405f;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: $btnHoverBackgroundColor;
+    }
+  }
+
+  .form-error {
+    margin-bottom: 1em;
+    padding: 0.2em;
+    background-color: $formErrorBackgroundColor;
+    color: $formErrorTextColor;
+  }
+}
