@@ -37,7 +37,7 @@ class HomePage extends Component {
     return (
       <div className="page-container-column">
         <Draggable position={this.state.userData.imageLocation} onStop={this.onDragStop}>
-          <div className="draggble-component">
+          <div className="draggable-component">
             <UserAvatar id="imageLocation"
                         avatarSrc={this.props.userData.image}
                         alt="user image"
@@ -46,7 +46,7 @@ class HomePage extends Component {
         </Draggable>
 
         <Draggable position={this.state.userData.profileLocation} onStop={this.onDragStop}>
-          <div className="draggble-component">
+          <div className="draggable-component">
             <UserProfile id="profileLocation"
                          username={this.props.username}
                          className="user-profile"/>
