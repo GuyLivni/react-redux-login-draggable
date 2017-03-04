@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
+import * as homeActions from '../actions/homeActions';
 import * as loginActions from '../actions/loginActions';
 
 class Nav extends Component {
@@ -17,6 +18,7 @@ class Nav extends Component {
   }
 
   logout() {
+    this.props.dispatch(homeActions.saveUserData(this.props.username, this.props.userData));
     this.props.dispatch(loginActions.logout());
   }
 
@@ -39,8 +41,9 @@ class Nav extends Component {
 
 Nav.propTypes = {
   loggedIn: PropTypes.bool.isRequired,
-  dispatch: PropTypes.func.isRequired,
-  username: PropTypes.string
+  username: PropTypes.string.isRequired,
+  userData: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 export default Nav;

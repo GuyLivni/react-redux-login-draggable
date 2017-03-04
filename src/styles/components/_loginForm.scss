@@ -1,4 +1,5 @@
-$formBtnColor: #fff;
+$formBtnColor: $white;
+$formHeaderColor: $white;
 $formErrorBackgroundColor: #f2dede;
 $formErrorTextColor: #a94442;
 
@@ -12,7 +13,7 @@ $formErrorTextColor: #a94442;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 
   .form-header{
-    color: #ffffff;
+    color: $formHeaderColor;
     font-weight: 400;
   }
 

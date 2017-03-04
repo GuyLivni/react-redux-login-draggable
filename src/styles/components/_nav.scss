@@ -1,5 +1,5 @@
-$logoColor: #000000;
-$navColor: #ffffff;
+$logoColor:$black;
+$navColor: $white;
 
 .nav-container {
   position: fixed;
@@ -19,7 +19,7 @@ $navColor: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     .logo-container {
       text-decoration: none;
 

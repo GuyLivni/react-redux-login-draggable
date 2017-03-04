@@ -2,9 +2,8 @@ import React, {PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as homeActions from '../actions/homeActions';
+import LoadingSpinner from '../components/LoadingSpinner';
 import UserProfile from '../components/UserProfile';
-import UserAvatar from '../components/UserAvatar';
-import Draggable from 'react-draggable';
 
 class HomePage extends Component {
 
@@ -29,29 +28,17 @@ class HomePage extends Component {
     this.setState({
       userData: userData
     });
-
-    this.props.actions.saveUserData(this.props.username, this.state.userData);
   }
 
   render() {
     return (
-      <div className="page-container-column">
-        <Draggable position={this.state.userData.imageLocation} onStop={this.onDragStop}>
-          <div className="draggable-component">
-            <UserAvatar id="imageLocation"
-                        avatarSrc={this.props.userData.image}
-                        alt="user image"
-                        className="user-avatar"/>
-          </div>
-        </Draggable>
-
-        <Draggable position={this.state.userData.profileLocation} onStop={this.onDragStop}>
-          <div className="draggable-component">
-            <UserProfile id="profileLocation"
-                         username={this.props.username}
-                         className="user-profile"/>
-          </div>
-        </Draggable>
+      <div className="page-container home-container">
+        {this.props.loading ? <LoadingSpinner/> :
+                              <UserProfile userData={this.props.userData}
+                                userInfoLocation={this.state.userData.profileLocation}
+                                userImageLocation={this.state.userData.imageLocation}
+                                onDragStop={this.onDragStop}/>
+        }
       </div>
     );
   }
@@ -60,12 +47,14 @@ class HomePage extends Component {
 HomePage.propTypes = {
   actions: PropTypes.object.isRequired,
   userData: PropTypes.object.isRequired,
-  username: PropTypes.string.isRequired
+  username: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
-  const { login, home } = state;
+  const { login, home, ajaxCallsInProgress } = state;
   return {
+    loading: ajaxCallsInProgress.currentlySending,
     userData: home,
     username: login.loggedInUser
   };

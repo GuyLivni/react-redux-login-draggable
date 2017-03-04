@@ -1,3 +1,5 @@
+import { loggedIn } from '../api/api';
+
 export default {
   userData: {
     username: '',
@@ -10,7 +12,7 @@ export default {
       username: '',
       password: ''
     },
-    loggedIn: false,
+    loggedIn: loggedIn(),
     errorMessage: '',
     loggedInUser: ''
   },

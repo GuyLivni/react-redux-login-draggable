@@ -4,19 +4,19 @@ import * as errorMessages  from '../constants/messageConstants';
 import * as api from '../api/api';
 import {browserHistory} from 'react-router';
 
-export function setAuthState(newState) {
+export const setAuthState = (newState) => {
   return {type: SET_AUTH, newState};
-}
+};
 
-export function setLoggedInUser(newState) {
+export const setLoggedInUser = (newState) => {
   return {type: SET_USER, newState};
-}
+};
 
-export function setErrorMessage(message) {
+export const setErrorMessage = (message) => {
   return {type: SET_ERROR_MESSAGE, message};
-}
+};
 
-export function login(username, password) {
+export const login = (username, password) => {
   return (dispatch) => {
     // Show the loading indicator
     dispatch(sendingRequest(true));
@@ -43,9 +43,9 @@ export function login(username, password) {
       }
     });
   };
-}
+};
 
-export function logout() {
+export const logout = () => {
   return (dispatch) => {
     dispatch(sendingRequest(true));
     api.logout((success) => {
@@ -59,18 +59,18 @@ export function logout() {
       }
     });
   };
-}
+};
 
-function validateLoginForm(credentials) {
+const validateLoginForm = (credentials) => {
   for (let credential in credentials) {
     if (credentials.hasOwnProperty(credential) && !credentials[credential]) {
       return true;
     }
   }
   return false;
-}
+};
 
-function showError(err, dispatch) {
+const showError = (err, dispatch) => {
   switch (err.type) {
     case 'user-doesnt-exist':
       dispatch(setErrorMessage(errorMessages.USER_NOT_FOUND));
@@ -82,8 +82,8 @@ function showError(err, dispatch) {
       dispatch(setErrorMessage(errorMessages.GENERAL_ERROR));
       return;
   }
-}
+};
 
-function forwardTo(location) {
+const forwardTo = (location) => {
   browserHistory.push(location);
-}
+};

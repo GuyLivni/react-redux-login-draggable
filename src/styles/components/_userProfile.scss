@@ -1,4 +1,8 @@
 .user-profile {
-  font-size:1.4em;
-  margin: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
 }

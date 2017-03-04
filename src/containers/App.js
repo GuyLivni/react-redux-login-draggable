@@ -1,14 +1,15 @@
 import React, {Component, PropTypes} from 'react';
 import Nav from '../components/Nav';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 class App extends Component {
   render() {
-    return(
+    return (
       <div className="app-container">
         <Nav loggedIn={this.props.loggedIn}
              username={this.props.username}
-             dispatch={this.props.dispatch} />
+             userData={this.props.userData}
+             dispatch={this.props.dispatch}/>
         { this.props.children }
       </div>
     );
@@ -17,14 +18,16 @@ class App extends Component {
 
 App.propTypes = {
   children: PropTypes.object.isRequired,
+  userData: PropTypes.object.isRequired,
   loggedIn: PropTypes.bool.isRequired,
-  username: PropTypes.string,
-  dispatch: PropTypes.func
+  username: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state, ownProps) {
-  const { login } = state;
+function mapStateToProps(state) {
+  const {home, login} = state;
   return {
+    userData: home,
     loggedIn: login.loggedIn,
     username: login.loggedInUser
   };

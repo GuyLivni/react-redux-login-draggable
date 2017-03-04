@@ -1,3 +1,5 @@
+$formControlColor: $white;
+
 .form-group {
   padding-bottom: 0.8em;
 
@@ -7,7 +9,7 @@
     background-color: #282a3f;
     border-radius: 0.2em;
     border: thin inset rgba(20, 22, 35, 0.25);
-    color: #ffffff;
+    color: $formControlColor;
     outline: none;
   }
 }

@@ -30,6 +30,7 @@ export const login = (username, password, callback) => {
   if (userExists && password == users[username].password) {
     if (callback) callback({
       authenticated: true,
+      token: Math.random().toString(36).substring(7),
       username
     });
   } else {
@@ -50,6 +51,7 @@ export const login = (username, password, callback) => {
 
 //log user out
 export const logout = (callback) => {
+  localStorage.removeItem('token');
   if (callback) callback();
 };
 
